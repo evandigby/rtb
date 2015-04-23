@@ -36,6 +36,7 @@ func (p *RedisPacer) CanBid(campaign rtb.Campaign) bool {
 	now := time.Now().UTC()
 	midnight := time.Date(now.Year(), now.Month(), now.Day()+1, 0, 0, 0, 0, time.UTC)
 
+	// TODO: This definitely only needs to be calculated at the end of each segment. Not every time we request a bid.
 	durationToMidnight := midnight.Sub(now)
 	segmentsToMidnight := int64(durationToMidnight / p.segment)
 	remaining := (budget / cpi) / segmentsToMidnight
