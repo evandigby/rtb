@@ -31,6 +31,12 @@ Proof of concept real time bidding library. This library can be tested using the
 #### Error handling
 - The current implementation should be stable within the context of what is implemented, but will panic at any errors that arise from unforseen circumstances. This should be fleshed out to provide more detailed error logging and reporting for better debugging in a production environment. 
 
+#### Testing
+- You will find tests in the root, inmemory, and redis folders. 
+- The root tests are simple unit tests for core functions, such as money conversions.
+- inmemory tests are pure unit tests of the bidder using mocks (see rtb/mocks) to stub out any data access
+- redis tests are integration tests of the redis components. 
+
 ## System Requirements
 The rtbhost requires the following:
 - Go
