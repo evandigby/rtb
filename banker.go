@@ -10,7 +10,6 @@ import (
 //
 // Although this should be close to 100% accurate, users of this interface
 // should not depended on implementations for a true transaction log and accounting purposes.
-// The transaction logger interface is more appropriate for that.
 type Banker interface {
 	// DebitAccount subtracts an amount from an account
 	// Returns the remaining remainingDailyBudgetInMicroCents after the transaction, and an error if the transaction was unsuccessful
