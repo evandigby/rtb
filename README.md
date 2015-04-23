@@ -75,5 +75,7 @@ Regarding usage:
 - You can run tests test using:
 
 	go test github.com/evandigby/rtb
+	
 	go test github.com/evandigby/rtb/inmemory
+	
 	go test github.com/evandigby/rtb/redis 
