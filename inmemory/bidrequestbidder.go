@@ -20,7 +20,7 @@ func (b *BidRequestBidder) highestBidder(campaigns []rtb.Campaign) (campaign rtb
 	for _, campaign := range campaigns {
 		id := campaign.Id()
 
-		if b.Pacer.CanBid(id) {
+		if b.Pacer == nil || b.Pacer.CanBid(campaign) {
 			bid := campaign.BidCpmInMicroCents()
 
 			if remainingDailyBudgetInMicroCents, err := b.CampaignProvider.DebitCampaign(id, rtb.MicroCentsPerImpression(bid), b.dailyBudgetExpirationTime); err == nil {

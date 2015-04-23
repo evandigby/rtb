@@ -71,6 +71,7 @@ func (da *RedisDataAccess) HSetInt64(accountKey string, key string, val int64) {
 	}
 
 	defer da.pool.CarefullyPut(client, &err)
+
 	reply := client.Cmd("HSET", da.withDomain(accountKey), key, val)
 
 	if reply.Err != nil {
@@ -86,6 +87,7 @@ func (da *RedisDataAccess) GetInt64(accountKey string) (success bool, result int
 	}
 
 	defer da.pool.CarefullyPut(client, &err)
+
 	reply := client.Cmd("GET", da.withDomain(accountKey))
 
 	if reply.Err != nil {

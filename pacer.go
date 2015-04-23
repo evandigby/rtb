@@ -6,7 +6,7 @@ import (
 
 // Defines an object that can set the pace of campaign spending
 type Pacer interface {
-	CanBid(account int64) bool
+	CanBid(campaign Campaign) bool
 }
 
 // Defines a specific type of pacer that will pace bids of a time period
