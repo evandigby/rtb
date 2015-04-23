@@ -42,3 +42,25 @@ The rtbhost requires the following:
 - Go
 - Access to a redis instance.
 - Access to an amqp server (if you want to utilize logging).
+
+## Usage
+Regarding usage:
+- Build rtbhost in the developer home directory:
+	go build github.com/evandigby/rtbhost 
+- Reset the data store in redis by using the shell script, found in the developer home directory:
+	./clear
+- Run the host on the default port by executing 
+	./rtbhost
+- See the many usage options by executing
+	./rtbhost --help
+- Launch two processes running at ports 8000 and 8001 using the shell script “launch”:
+	./launch
+- Any parameters passed into launch will be passed onto both rtbhost instances.
+- By default, the rtbhost will output a status update on both campaigns every 5 seconds. The shell script will wait 2 seconds before starting the second process to ensure the logging doesn’t overlap.
+- You can use the “logverbose” option to force rtbhost to log every request (to stdout by default):
+	./launch --logverbose
+- There are many other command line options. Please feel free to explore them!
+- You can run tests test using:
+	go test github.com/evandigby/rtb
+	go test github.com/evandigby/rtb/inmemory
+	go test github.com/evandigby/rtb/redis 
