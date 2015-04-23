@@ -9,7 +9,7 @@ Proof of concept real time bidding library. This library can be tested using the
 - There is still a to-do item to implement the *AND* relationship for targeting, allowing campaigns to require all of their targets, or combinations of their targets, not just any of the targets.
 
 #### Bid Decisions
-- The target matching sets in redis are stored as sorted sets whos score is their bid CPM. 
+- The target matching sets in redis are stored as sorted sets whose score is their bid CPM. 
 - When the set union is returned from target matching, it's already sorted from highest bid CPM to lowest.
 - In most cases, the bidder will pick the first one. If the first one does not have available budget, the bidder will move down the list.
 - Pacing can be implemented using the "BidPacer" interface. Every time a bidder matches a campaign, it will first ask that campaign if it "can bid" through the pacer.
