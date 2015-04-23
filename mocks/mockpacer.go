@@ -8,8 +8,8 @@ type MockPacer struct {
 	canBidResults map[int64]bool
 }
 
-func (p *MockPacer) CanBid(account int64) bool {
-	return p.canBidResults[account]
+func (p *MockPacer) CanBid(campaign rtb.Campaign) bool {
+	return p.canBidResults[campaign.Id()]
 }
 
 func NewMockPacer(canBidResults map[int64]bool) rtb.Pacer {
