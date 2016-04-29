@@ -1,6 +1,13 @@
 # rtb Real Time Bidding Interface
 Proof of concept real time bidding library. This library can be tested using the p.o.c server implementation at https://github.com/evandigby/rtbhost. 
 
+## About This Project -- The "Why?"
+This project was completed over a couple days (~10 hours of work) as part of an interview process. This was my first crack at RTB logic, as well as my first attempt at programming in Go. 
+
+Having successfully gotten the job and after working with a production RTB in Go for a year, I would do most of it entirely differenty if I started from scratch. There are also a few places I would tweak to make it look more like proper Go.
+
+If anyone takes notice, I would be happy to elaborate on things I would do differently, within the context of this project. 
+
 ## Implementation Notes
 
 #### Target Matching
